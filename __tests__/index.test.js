@@ -70,4 +70,9 @@ describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
     expect(earthYearsPassed).toEqual(16.13);
   });
   
+  test(`should return the correct number of Mars years that have passed since the given pastAgeTarget`, () => {
+    let earthYearsPassed = testOutput['mars'];
+    expect(earthYearsPassed).toEqual(5.32);
+  });
+  
 });
