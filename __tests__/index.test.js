@@ -32,3 +32,23 @@ describe(`AgeCalculator.prototype.getAgeForPlanet`, () => {
   });
   
 });
+
+describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
+
+  test(`should return an object whose keys are planet names and values are numbers`, () => {
+    
+    let testOutput = ageCalculator.getYearsSinceEarthBirthday({
+      currentEarthAge: 32,
+      pastAgeTarget: 22
+    });
+
+    let isObject = typeof testOutput === 'object';
+    let keysArePlanets = [...Object.keys(testOutput)] === ['mercury', 'venus', 'mars', 'jupiter'];
+    let valuesAreNumbers = [...Object.values(testObject)].every(val => !isNaN(val));
+    
+    expect(isObject).toEqual(true);
+    expect(keysArePlanets).toEqual(true);
+    expect(valuesAreNumbers).toEqual(true);
+  });
+  
+});
