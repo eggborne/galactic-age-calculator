@@ -1,12 +1,7 @@
 import AgeCalculator from "../src/js/AgeCalculator";
+let ageCalculator = new AgeCalculator();
 
 describe(`AgeCalculator.prototype.getAgeForPlanet`, () => {
-  
-  let ageCalculator;
-
-  beforeEach(() => {
-    ageCalculator = new AgeCalculator();
-  });
 
   let mercuryAge = ageCalculator.getAgeForPlanet({
     earthAge: 32,
