@@ -69,5 +69,5 @@ describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
     let earthYearsPassed = testOutput['venus'];
     expect(earthYearsPassed).toEqual(16.13);
   });
-
+  
 });
