@@ -24,4 +24,11 @@ describe(`AgeCalculator.prototype.getAgeForPlanet`, () => {
     })).toEqual(60.16);
   });
   
+  test(`should return 379.52 when given argument { earthAge: 32, ageToGet: 'jupiter' } `, () => {
+    expect(ageCalculator.getAgeForPlanet({
+      earthAge: 32,
+      ageToGet: 'jupiter'
+    })).toEqual(379.52);
+  });
+  
 });
