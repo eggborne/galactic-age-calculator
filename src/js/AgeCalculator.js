@@ -9,19 +9,17 @@ export default class AgeCalculator {
     };
   }
 
-  getAgeForPlanet(options) {
-    return parseFloat((options.earthAge / this.planetAgeRatios[options.ageToGet]).toFixed(2));
+  convertEarthYears(earthYears, planet) {
+    return parseFloat((earthYears / this.planetAgeRatios[planet]).toFixed(2));
   }
 
   getYearsSinceEarthBirthday(options) {
     let output = {};
     let earthYearsSince = options.currentEarthAge - options.pastAgeTarget;
     for (const planet in this.planetAgeRatios) {
-      output[planet] = this.getAgeForPlanet({
-        earthAge: earthYearsSince,
-        ageToGet: planet,
-      });
+      output[planet] = this.convertEarthYears(earthYearsSince, planet);
     }
+    console.log(output)
     return output;
   }
 }
