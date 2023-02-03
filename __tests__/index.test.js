@@ -75,4 +75,9 @@ describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
     expect(earthYearsPassed).toEqual(5.32);
   });
   
+  test(`should return the correct number of Jupiter years that have passed since the given pastAgeTarget`, () => {
+    let earthYearsPassed = testOutput['jupiter'];
+    expect(earthYearsPassed).toEqual(0.84);
+  });
+  
 });
