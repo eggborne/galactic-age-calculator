@@ -7,63 +7,67 @@ describe(`AgeCalculator.prototype.getAgeForPlanet`, () => {
     expect(ageCalculator.getAgeForPlanet({
       earthAge: 32,
       ageToGet: 'mercury'
-    })).toEqual(7.68);
+    })).toEqual(133.33);
   });
 
   test(`should return 19.84 when given argument { earthAge: 32, ageToGet: 'venus' } `, () => {
     expect(ageCalculator.getAgeForPlanet({
       earthAge: 32,
       ageToGet: 'venus'
-    })).toEqual(19.84);
+    })).toEqual(51.61);
   });
 
   test(`should return 60.16 when given argument { earthAge: 32, ageToGet: 'mars' } `, () => {
     expect(ageCalculator.getAgeForPlanet({
       earthAge: 32,
       ageToGet: 'mars'
-    })).toEqual(60.16);
+    })).toEqual(17.02);
   });
 
   test(`should return 379.52 when given argument { earthAge: 32, ageToGet: 'jupiter' } `, () => {
     expect(ageCalculator.getAgeForPlanet({
       earthAge: 32,
       ageToGet: 'jupiter'
-    })).toEqual(379.52);
+    })).toEqual(2.7);
   });
 
 });
 
 describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
 
-  test(`should return an object whose keys are planet names and values are numbers`, () => {
+  let testOutput;
 
-    let testOutput = ageCalculator.getYearsSinceEarthBirthday({
+  beforeEach(() => {
+    testOutput = ageCalculator.getYearsSinceEarthBirthday({
       currentEarthAge: 32,
       pastAgeTarget: 22
     });
+  });
 
+  test(`should return an object whose keys are planet names and values are numbers`, () => {
     let isObject = typeof testOutput === 'object';
     let keysArePlanets = [...Object.keys(testOutput)].every(key => {
       return [...Object.keys(ageCalculator.planetAgeRatios)].includes(key);
     });
     let valuesAreNumbers = [...Object.values(testOutput)].every(val => !isNaN(val));
-
     expect(isObject).toEqual(true);
     expect(keysArePlanets).toEqual(true);
     expect(valuesAreNumbers).toEqual(true);
-
   });
 
   test(`should return the correct number of Earth years that have passed since the given pastAgeTarget`, () => {
-
-    let testOutput = ageCalculator.getYearsSinceEarthBirthday({
-      currentEarthAge: 32,
-      pastAgeTarget: 22
-    });
-
     let earthYearsPassed = testOutput['earth'];
     expect(earthYearsPassed).toEqual(10);
-    
+  });
+
+  test(`should return the correct number of Mercury years that have passed since the given pastAgeTarget`, () => {
+    let earthYearsPassed = testOutput['mercury'];
+    expect(earthYearsPassed).toEqual(41.67);
+  });
+  
+  test(`should return the correct number of Venus years that have passed since the given pastAgeTarget`, () => {
+    let earthYearsPassed = testOutput['venus'];
+    expect(earthYearsPassed).toEqual(16.13);
   });
 
 });

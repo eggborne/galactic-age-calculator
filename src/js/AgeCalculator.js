@@ -6,17 +6,21 @@ export default class AgeCalculator {
       'venus': 0.62,
       'mars': 1.88,
       'jupiter': 11.86,
-    }
+    };
   }
 
   getAgeForPlanet(options) {
-    return (options.earthAge * this.planetAgeRatios[options.ageToGet]);
+    return parseFloat((options.earthAge / this.planetAgeRatios[options.ageToGet]).toFixed(2));
   }
 
   getYearsSinceEarthBirthday(options) {
     let output = {};
+    let earthYearsSince = options.currentEarthAge - options.pastAgeTarget;
     for (const planet in this.planetAgeRatios) {
-      output[planet] = options.currentEarthAge - options.pastAgeTarget;
+      output[planet] = this.getAgeForPlanet({
+        earthAge: earthYearsSince,
+        ageToGet: planet,
+      });
     }
     return output;
   }
