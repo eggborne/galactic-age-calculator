@@ -11,4 +11,12 @@ export default class AgeCalculator {
   getAgeForPlanet(options) {
     return (options.earthAge * this.planetAgeRatios[options.ageToGet]);
   }
+
+  getYearsSinceEarthBirthday(options) {
+    let output = {};
+    for (const planet in this.planetAgeRatios) {
+      output[planet] = 0;
+    }
+    return output;
+  }
 }
