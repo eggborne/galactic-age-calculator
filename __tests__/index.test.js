@@ -51,6 +51,19 @@ describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
     expect(isObject).toEqual(true);
     expect(keysArePlanets).toEqual(true);
     expect(valuesAreNumbers).toEqual(true);
+
+  });
+
+  test(`should return the correct number of Earth years that have passed since the given pastAgeTarget`, () => {
+
+    let testOutput = ageCalculator.getYearsSinceEarthBirthday({
+      currentEarthAge: 32,
+      pastAgeTarget: 22
+    });
+
+    let earthYearsPassed = testOutput['earth'];
+    expect(earthYearsPassed).toEqual(10);
+    
   });
 
 });
