@@ -17,4 +17,11 @@ describe(`AgeCalculator.prototype.getAgeForPlanet`, () => {
     })).toEqual(19.84);
   });
   
+  test(`should return 60.16 when given argument { earthAge: 32, ageToGet: 'mars' } `, () => {
+    expect(ageCalculator.getAgeForPlanet({
+      earthAge: 32,
+      ageToGet: 'mars'
+    })).toEqual(60.16);
+  });
+  
 });
