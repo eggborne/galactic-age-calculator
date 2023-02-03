@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "galactic-age-calculator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "lint": "eslint src/*.js __tests__/*.js",
     "test": "jest --coverage"
   },
-  "author": "",
+  "author": "mike@mikedonovan.dev",
   "license": "ISC",
   "jest": {
     "verbose": false,

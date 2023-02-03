@@ -1,29 +1,42 @@
-# (Application Name)
+# Galactic Age Calculator
+#### Special Project #4 for Epicodus, 3 February 2023
+### by Mike Donovan
 
-#### (Brief Description of Application)
-
-#### By (Your Name Here)
-
-## Technologies Used
-
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+[Visit at GitHub Pages](https://eggborne.github.io/galactic-age-calculator)
 
 ## Description
 
-## Setup/Installation Requirements
+A website that various information about a user's solar age based on different planets.
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+## Technologies Used:
+* HTML
+* CSS
+* JavaScript
+* NPM
+* Webpack
+
+## Setup/Installation Instructions
+
+Open a terminal and clone this repository by typing:
+
+> git clone https://github.com/eggborne/galactic-age-calculator
+
+Install the required dependencies by typing:
+
+> npm install
+
+To start a development server, type:
+
+> npm run start
+
+To output a production build to folder `dist/`, type:
+
+ > npm run build
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+None
 
-## License
+## Legal
+
+This software has no license.
