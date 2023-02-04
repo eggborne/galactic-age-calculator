@@ -21,13 +21,17 @@ Open a terminal and clone this repository by typing:
 
 > git clone https://github.com/eggborne/galactic-age-calculator
 
-Install the required dependencies by typing:
+Navigate to the created directory and install the required dependencies by typing:
 
 > npm install
 
 To start a development server, type:
 
 > npm run start
+
+To run a Jest test suite, type:
+
+> npm run test
 
 To output a production build to folder `dist/`, type:
 
@@ -36,8 +40,6 @@ To output a production build to folder `dist/`, type:
 ## Known Bugs
 
 None
-
-## Legal
 
 ## Legal
 
