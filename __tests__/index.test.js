@@ -48,15 +48,15 @@ describe(`AgeCalculator.prototype.getYearsAwayFromEarthAge`, () => {
   test(`should return the correct number of Mercury years that have passed since the given targetEarthAge`, () => {
     expect(testPastOutput['mercury']).toEqual(41.67);
   });
-  
+
   test(`should return the correct number of Venus years that have passed since the given targetEarthAge`, () => {
     expect(testPastOutput['venus']).toEqual(16.13);
   });
-  
+
   test(`should return the correct number of Mars years that have passed since the given targetEarthAge`, () => {
     expect(testPastOutput['mars']).toEqual(5.32);
   });
-  
+
   test(`should return the correct number of Jupiter years that have passed since the given targetEarthAge`, () => {
     expect(testPastOutput['jupiter']).toEqual(0.84);
   });
@@ -68,17 +68,17 @@ describe(`AgeCalculator.prototype.getYearsAwayFromEarthAge`, () => {
   test(`should return the correct number of Mercury years that have yet to pass until the given targetEarthAge`, () => {
     expect(testFutureOutput['mercury']).toEqual(208.33);
   });
-  
+
   test(`should return the correct number of Venus years that have yet to pass until the given targetEarthAge`, () => {
     expect(testFutureOutput['venus']).toEqual(80.65);
   });
-  
+
   test(`should return the correct number of Mars years that have yet to pass until the given targetEarthAge`, () => {
     expect(testFutureOutput['mars']).toEqual(26.6);
   });
-  
+
   test(`should return the correct number of Jupiter years that yet to pass untilsince the given targetEarthAge`, () => {
     expect(testFutureOutput['jupiter']).toEqual(4.22);
   });
-  
+
 });
