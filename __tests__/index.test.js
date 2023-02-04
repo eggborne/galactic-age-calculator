@@ -21,46 +21,43 @@ describe(`AgeCalculator.prototype.convertEarthYears`, () => {
 
 });
 
-describe(`AgeCalculator.prototype.getYearsSinceEarthBirthday`, () => {
+describe(`AgeCalculator.prototype.getYearsAwayFromEarthAge`, () => {
 
-  let testOutput;
+  let testPastOutput;
 
   beforeEach(() => {
-    testOutput = ageCalculator.getYearsSinceEarthBirthday({
-      currentEarthAge: 32,
-      pastAgeTarget: 22
-    });
+    testPastOutput = ageCalculator.getYearsAwayFromEarthAge(32, 22);
   });
 
   test(`should return an object whose keys are planet names and values are numbers`, () => {
-    let isObject = typeof testOutput === 'object';
-    let keysArePlanets = [...Object.keys(testOutput)].every(key => {
+    let isObject = typeof testPastOutput === 'object';
+    let keysArePlanets = [...Object.keys(testPastOutput)].every(key => {
       return [...Object.keys(ageCalculator.planetAgeRatios)].includes(key);
     });
-    let valuesAreNumbers = [...Object.values(testOutput)].every(val => !isNaN(val));
+    let valuesAreNumbers = [...Object.values(testPastOutput)].every(val => !isNaN(val));
     expect(isObject).toEqual(true);
     expect(keysArePlanets).toEqual(true);
     expect(valuesAreNumbers).toEqual(true);
   });
 
-  test(`should return the correct number of Earth years that have passed since the given pastAgeTarget`, () => {
-    expect(testOutput['earth']).toEqual(10);
+  test(`should return the correct number of Earth years that have passed since the given targetEarthAge`, () => {
+    expect(testPastOutput['earth']).toEqual(10);
   });
 
-  test(`should return the correct number of Mercury years that have passed since the given pastAgeTarget`, () => {
-    expect(testOutput['mercury']).toEqual(41.67);
+  test(`should return the correct number of Mercury years that have passed since the given targetEarthAge`, () => {
+    expect(testPastOutput['mercury']).toEqual(41.67);
   });
   
-  test(`should return the correct number of Venus years that have passed since the given pastAgeTarget`, () => {
-    expect(testOutput['venus']).toEqual(16.13);
+  test(`should return the correct number of Venus years that have passed since the given targetEarthAge`, () => {
+    expect(testPastOutput['venus']).toEqual(16.13);
   });
   
-  test(`should return the correct number of Mars years that have passed since the given pastAgeTarget`, () => {
-    expect(testOutput['mars']).toEqual(5.32);
+  test(`should return the correct number of Mars years that have passed since the given targetEarthAge`, () => {
+    expect(testPastOutput['mars']).toEqual(5.32);
   });
   
-  test(`should return the correct number of Jupiter years that have passed since the given pastAgeTarget`, () => {
-    expect(testOutput['jupiter']).toEqual(0.84);
+  test(`should return the correct number of Jupiter years that have passed since the given targetEarthAge`, () => {
+    expect(testPastOutput['jupiter']).toEqual(0.84);
   });
   
 });

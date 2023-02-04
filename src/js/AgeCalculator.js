@@ -13,13 +13,12 @@ export default class AgeCalculator {
     return parseFloat((earthYears / this.planetAgeRatios[planet]).toFixed(2));
   }
 
-  getYearsSinceEarthBirthday(options) {
+  getYearsAwayFromEarthAge(currentEarthAge, targetEarthAge) {
     let output = {};
-    let earthYearsSince = options.currentEarthAge - options.pastAgeTarget;
+    let earthYearsSince = Math.abs(currentEarthAge - targetEarthAge);
     for (const planet in this.planetAgeRatios) {
       output[planet] = this.convertEarthYears(earthYearsSince, planet);
     }
-    console.log(output)
     return output;
   }
 }
