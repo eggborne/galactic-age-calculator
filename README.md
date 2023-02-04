@@ -6,7 +6,7 @@
 
 ## Description
 
-A website that various information about a user's solar age based on different planets.
+A website that produces information about a user's solar age based on different planets.
 
 ## Technologies Used:
 * HTML
@@ -33,6 +33,10 @@ To run a Jest test suite, type:
 
 > npm run test
 
+To generate an ESLint report, type:
+
+> npm run lint
+
 To output a production build to folder `dist/`, type:
 
  > npm run build
@@ -45,7 +49,7 @@ None
 
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2023 Mike Donovan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
