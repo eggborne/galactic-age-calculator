@@ -2,8 +2,6 @@
 #### Special Project #4 for Epicodus, 3 February 2023
 ### by Mike Donovan
 
-[Visit at GitHub Pages](https://eggborne.github.io/galactic-age-calculator)
-
 ## Description
 
 A website that produces information about a user's solar age based on different planets.
